@@ -245,6 +245,7 @@ Name | Description | Type | Default
 `sqldb_init_script_file`|SQL file to execute via sqlcmd utility to create required database schema |string|`""`
 `enable_log_monitoring`|Enable audit events to Azure Monitor?|string|`false`
 `storage_account_name`|The name of the storage account name|string|`null`
+`log_analytics_workspace_rg`|The Resource Group name of log analytics workspace |string|`null`
 `log_analytics_workspace_name`|The name of log analytics workspace name|string|`null`
 `random_password_length`|The desired length of random password created by this module|number|`24`
 `Tags`|A map of tags to add to all resources|map|`{}`
