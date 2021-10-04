@@ -34,8 +34,8 @@ provider "azurerm" {
 }
 
 module "mssql-server" {
-  source  = "kumarvna/mssql-db/azurerm"
-  version = "1.2.0"
+  source  = "git::https://github.com/pranav03singh/tf-msqldb"
+  
 
   # By default, this module will create a resource group
   # proivde a name to use an existing resource group and set the argument 
@@ -81,6 +81,7 @@ module "mssql-server" {
   # (Optional) To enable Azure Monitoring for Azure SQL database including audit logs
   # log analytic workspace name required
   enable_log_monitoring        = true
+  log_analytics_workspace_rg   = "loganalytics-we-rg"
   log_analytics_workspace_name = "loganalytics-we-sharedtest2"
 
   # Firewall Rules to allow azure and external clients and specific Ip address/ranges. 
