@@ -293,7 +293,7 @@ resource "azurerm_sql_firewall_rule" "fw02" {
 
 resource "azurerm_sql_failover_group" "fog" {
   count               = var.enable_failover_group ? 1 : 0
-  name                = "sqldb-failover-group"
+  name                = "${var.sqlserver_name}-failover-group"
   resource_group_name = local.resource_group_name
   server_name         = azurerm_sql_server.primary.name
   databases           = [azurerm_sql_database.db.id]
